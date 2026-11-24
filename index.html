@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estratum · VENUS Namibia</title>
+  <meta name="description" content="Lee VENUS, la edición especial de Estratum sobre el proyecto petrolero en aguas ultraprofundas frente a Namibia.">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="pages.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header id="libraryHeader">
+    <a class="brand" href="#" aria-label="Estratum, inicio">Estratum<span>.</span></a>
+    <form id="catalogSearch">
+      <input type="search" id="catalogQuery" placeholder="Buscar edición" aria-label="Buscar en el catálogo">
+    </form>
+  </header>
+  <main id="catalog">
+    <section class="collection">
+      <h1>EDICIONES</h1>
+      <div class="issue-grid">
+        <article class="issue">
+          <a id="coverOpen" href="#revista/pagina/1" aria-label="Abrir revista VENUS">
+            <img src="revista/pagina-01.webp" width="1316" height="1703" alt="Portada de VENUS en aguas ultraprofundas">
+          </a>
+          <a id="readBtn" href="#revista/pagina/1">VENUS en aguas ultraprofundas<small>Namibia · Noviembre 2026 · 40 páginas</small></a>
+        </article>
+      </div>
+      <p id="noIssues" hidden>No hay ediciones que coincidan.</p>
+    </section>
+  </main>
+  <section id="reader" hidden aria-label="Lector de VENUS">
+    <div class="reader-top">
+      <a id="catalogBtn" href="#">Biblioteca</a>
+      <span class="reader-brand">Estratum</span>
+      <div class="reader-actions">
+        <button type="button" id="tocBtn" aria-expanded="false" aria-controls="sidebar">Índice</button>
+      </div>
+    </div>
+    <div class="reader-body">
+      <div class="page-area">
+        <div class="stage" id="stage" tabindex="0" aria-label="Páginas de la revista">
+          <div class="spread" id="spread"></div>
+        </div>
+        <button type="button" id="prev" class="page-arrow previous" aria-label="Página anterior">‹</button>
+        <button type="button" id="next" class="page-arrow next" aria-label="Página siguiente">›</button>
+      </div>
+      <aside id="sidebar" hidden aria-label="Índice y búsqueda">
+        <div class="sidebar-inner">
+          <div class="panel-heading">
+            <h2 id="panelTitle">Índice de VENUS</h2>
+            <button type="button" id="closePanel">Cerrar</button>
+          </div>
+          <form id="readerSearch" role="search">
+            <input id="query" type="search" placeholder="Buscar en la revista" aria-label="Buscar en esta revista">
+            <button id="clearQuery" type="button">Borrar</button>
+          </form>
+          <p id="resultCount" hidden aria-live="polite"></p>
+          <div class="panel-files">
+            <a id="printBtn" href="revista/VENUS_Namibia_2026.pdf" target="_blank" rel="noopener">Abrir PDF para imprimir</a>
+            <a class="download-pdf" href="revista/VENUS_Namibia_2026.pdf" download>Descargar PDF</a>
+          </div>
+          <nav id="entries" aria-label="Páginas y resultados de búsqueda"></nav>
+        </div>
+      </aside>
+    </div>
+    <div class="toolbar">
+      <form class="page-control" id="pageForm">
+        <button type="button" id="first" aria-label="Ir a la portada" title="Portada">⇤</button>
+        <input id="pageNum" type="number" inputmode="numeric" min="1" max="40" value="1" aria-label="Ir a una página">
+        <span id="pageTotal">de 40</span>
+        <button type="button" id="last" aria-label="Ir a la última página" title="Contraportada">⇥</button>
+      </form>
+      <div class="footer-tools">
+        <div class="view-control" aria-label="Modo de lectura">
+          <button type="button" id="single" aria-pressed="false">1 página</button>
+          <button type="button" id="double" aria-pressed="true">2 páginas</button>
+        </div>
+        <div class="zoom-control">
+          <button type="button" id="zoomOut" aria-label="Reducir zoom">−</button>
+          <input id="zoomRange" type="range" min="50" max="300" step="25" value="100" aria-label="Zoom">
+          <button type="button" id="zoomIn" aria-label="Aumentar zoom">+</button>
+          <output id="zoomLabel" for="zoomRange">100%</output>
+        </div>
+        <button type="button" id="fit" title="Ajustar a la pantalla">Ajustar</button>
+        <button type="button" id="showLinks" aria-pressed="false">Ver enlaces</button>
+        <button type="button" id="fullscreen" aria-label="Pantalla completa" title="Pantalla completa">⛶</button>
+      </div>
+      <a class="pdf-shortcut" href="revista/VENUS_Namibia_2026.pdf" target="_blank" rel="noopener">PDF</a>
+    </div>
+  </section>
+  <div id="toast" role="status" hidden></div>
+</body>
+</html>
